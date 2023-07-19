@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj": {}
+    "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj": {
+    "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
+        "projectUniqueName": "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
         "projectName": "WFGravarDadosMySQL",
-        "projectPath": "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
+        "projectPath": "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
         "packagesPath": "C:\\Users\\murilo.sfmelo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\obj\\",
+        "outputPath": "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

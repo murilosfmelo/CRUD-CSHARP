@@ -37,6 +37,10 @@ namespace WFGravarDadosMySQL
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_buscar = new System.Windows.Forms.Button();
+            this.lst_contatos = new System.Windows.Forms.ListView();
+            this.text_buscar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNome
@@ -62,7 +66,7 @@ namespace WFGravarDadosMySQL
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(187, 242);
+            this.button1.Location = new System.Drawing.Point(99, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -97,12 +101,51 @@ namespace WFGravarDadosMySQL
             this.label3.TabIndex = 6;
             this.label3.Text = "E-mail";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(339, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Buscar Contato";
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Location = new System.Drawing.Point(581, 105);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(75, 23);
+            this.txt_buscar.TabIndex = 8;
+            this.txt_buscar.Text = "Buscar";
+            this.txt_buscar.UseVisualStyleBackColor = true;
+            this.txt_buscar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lst_contatos
+            // 
+            this.lst_contatos.HideSelection = false;
+            this.lst_contatos.Location = new System.Drawing.Point(339, 168);
+            this.lst_contatos.Name = "lst_contatos";
+            this.lst_contatos.Size = new System.Drawing.Size(317, 97);
+            this.lst_contatos.TabIndex = 9;
+            this.lst_contatos.UseCompatibleStateImageBehavior = false;
+            // 
+            // text_buscar
+            // 
+            this.text_buscar.Location = new System.Drawing.Point(339, 105);
+            this.text_buscar.Name = "text_buscar";
+            this.text_buscar.Size = new System.Drawing.Size(202, 23);
+            this.text_buscar.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(302, 336);
+            this.ClientSize = new System.Drawing.Size(662, 321);
+            this.Controls.Add(this.text_buscar);
+            this.Controls.Add(this.lst_contatos);
+            this.Controls.Add(this.txt_buscar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,6 +170,10 @@ namespace WFGravarDadosMySQL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button txt_buscar;
+        private System.Windows.Forms.ListView lst_contatos;
+        private System.Windows.Forms.TextBox text_buscar;
     }
 }
 

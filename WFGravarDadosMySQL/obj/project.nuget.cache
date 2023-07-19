@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lu0mInOZHRsXxguVIEXWBJe46Q1ewBuB40cOT6kH+uuLrV4AJOJX7YYkXHSvNuK1liunSVbGPm8+QkzymiwotA==",
+  "dgSpecHash": "FByHrwbhksyIsFlIsHhFsaY6l1Kad9oYXoGXttDs78h4HToSg5OUr4d+I0pjx40BEDtV1hzeoh1bRdxg5XiIOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\murilo.sfmelo\\source\\repos\\WFGravarDadosMySQL\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
+  "projectFilePath": "C:\\Users\\murilo.sfmelo\\Source\\Repos\\CRUD-CSHARP\\WFGravarDadosMySQL\\WFGravarDadosMySQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\murilo.sfmelo\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\murilo.sfmelo\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
