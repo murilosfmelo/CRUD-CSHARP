@@ -19,6 +19,19 @@ namespace WFGravarDadosMySQL
         public Form1()
         {
             InitializeComponent();
+
+            lst_contatos.View = View.Details;
+            lst_contatos.AllowColumnReorder = true;
+            lst_contatos.FullRowSelect = true;
+            lst_contatos.GridLines = true;
+
+
+            lst_contatos.Columns.Add("ID", 30, HorizontalAlignment.Left);
+            lst_contatos.Columns.Add("Nome", 150, HorizontalAlignment.Left);
+            lst_contatos.Columns.Add("Email", 150, HorizontalAlignment.Left);
+            lst_contatos.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,19 +40,26 @@ namespace WFGravarDadosMySQL
             {
                 string data_source = "datasource=localhost;username=root;password=;database=db_agenda";
                 Conexao = new MySqlConnection(data_source);
-
-                string sql = "INSERT INTO contato (nome,email,telefone)"+
-                    "VALUES "+
-                    "(' "+txtNome.Text+"','"+txtEmail.Text+"' ,'"+txtTelefone.Text+"')";
-
-                MySqlCommand comando = new MySqlCommand(sql, Conexao);
                 Conexao.Open();
-                comando.ExecuteReader();
-                MessageBox.Show("Cadastro inserido com sucesso!");
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = Conexao;
 
-            }catch(Exception ex)
+                cmd.CommandText = "INSERT INTO contato(nome,email,telefone) VALUES(@nome,@email,@telefone)";
+
+                cmd.Parameters.AddWithValue("@nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Contato inserido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                
+
+            }catch(MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Erro:"+ex.Message,"Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -87,6 +107,21 @@ namespace WFGravarDadosMySQL
             {
                 Conexao.Close();
             }
+        }
+
+        private void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lst_contatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,7 +38,7 @@ namespace WFGravarDadosMySQL
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lst_contatos = new System.Windows.Forms.ListView();
-            this.txt_Buscar = new System.Windows.Forms.TextBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -119,13 +119,15 @@ namespace WFGravarDadosMySQL
             this.lst_contatos.Size = new System.Drawing.Size(390, 97);
             this.lst_contatos.TabIndex = 8;
             this.lst_contatos.UseCompatibleStateImageBehavior = false;
+            this.lst_contatos.SelectedIndexChanged += new System.EventHandler(this.lst_contatos_SelectedIndexChanged);
             // 
-            // txt_Buscar
+            // txt_buscar
             // 
-            this.txt_Buscar.Location = new System.Drawing.Point(207, 67);
-            this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(298, 23);
-            this.txt_Buscar.TabIndex = 9;
+            this.txt_buscar.Location = new System.Drawing.Point(207, 67);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(298, 23);
+            this.txt_buscar.TabIndex = 9;
+            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
             // label4
             // 
@@ -142,7 +144,7 @@ namespace WFGravarDadosMySQL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 259);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_Buscar);
+            this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.lst_contatos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -154,6 +156,7 @@ namespace WFGravarDadosMySQL
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +173,7 @@ namespace WFGravarDadosMySQL
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView lst_contatos;
-        private System.Windows.Forms.TextBox txt_Buscar;
+        private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Label label4;
     }
 }
