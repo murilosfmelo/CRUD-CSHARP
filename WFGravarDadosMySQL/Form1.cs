@@ -14,51 +14,79 @@ namespace WFGravarDadosMySQL
     public partial class Form1 : Form
     {
 
-        MySqlConnection Conexao;
-
+        private MySqlConnection Conexao;
+        private string data_source = "datasource=localhost;username=root;password=;database=db_agenda";
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
-            try //tentar conexão
+            try
             {
                 string data_source = "datasource=localhost;username=root;password=;database=db_agenda";
-
                 Conexao = new MySqlConnection(data_source);
 
-                string sql = "INSERT INTO contato (nome,email,telefone)" +
-                    "VALUES" +
-                    "(' " + txtNome.Text + "', '" + txtEmail.Text + "', '" + txtTelefone.Text + "')";
+                string sql = "INSERT INTO contato (nome,email,telefone)"+
+                    "VALUES "+
+                    "(' "+txtNome.Text+"','"+txtEmail.Text+"' ,'"+txtTelefone.Text+"')";
 
                 MySqlCommand comando = new MySqlCommand(sql, Conexao);
                 Conexao.Open();
                 comando.ExecuteReader();
+                MessageBox.Show("Cadastro inserido com sucesso!");
 
-                MessageBox.Show("Cadastro inserido com sucesso meu nobre");
-
-            }
-            catch (Exception ex)
+            }catch(Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
             }
             finally
             {
-
                 Conexao.Close();
             }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string q = " '%" + txt_buscar.Text + "%' ";
 
+                Conexao = new MySqlConnection(data_source);
+
+                string sql = "SELECT * " + "FROM contato " +
+                    "WHERE nome LIKE " + q + "OR email LIKE " + q;
+
+                MySqlCommand comando = new MySqlCommand(sql, Conexao);
+                Conexao.Open();
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                lst_contatos.Items.Clear();
+
+                while (reader.Read())
+                {
+                    string[] row =
+                    {
+                        reader.GetString(0),
+                        reader.GetString(1),
+                        reader.GetString(2),
+                        reader.GetString(3),
+                    };
+
+                    var linhaListView = new ListViewItem(row);
+
+                    lst_contatos.Items.Add(linhaListView);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexao.Close();
+            }
         }
     }
 }
